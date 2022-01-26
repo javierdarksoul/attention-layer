@@ -31,7 +31,7 @@ test_loader= DataLoader(mnist_test_data, batch_size=1)
 
 
 model = convModel()
-train(model,train_loader,valid_loader, params['train']['epoch'], params['train']['learnrate'], params['train']['usecuda'] ,params['train']['pathsave_conv'] , "metrics_conv.json")
+train(model,train_loader,valid_loader, params['train']['epoch'], params['train']['learnrate'], params['train']['usecuda'] ,params['train']['pathsave_conv'] , "metrics/metrics_conv.json")
 
 model.load_state_dict(torch.load(params['train']['pathsave_conv'] + "/best.pt"))
 model= model.cpu()
@@ -49,14 +49,14 @@ kpi= precision_recall_fscore_support(labels.detach().numpy(), predictions.detach
 
 
 kpi_dict={'class 0': kpi[0][0],'class 1': kpi[0][1],'class 2': kpi[0][2],'class 3': kpi[0][3],'class 4': kpi[0][4],'class 5': kpi[0][5],'class 6': kpi[0][6] ,'class 7': kpi[0][7],'class 8': kpi[0][8],'class 9': kpi[0][9]}
-with open("precision_conv.json", "w") as f:
+with open("metrics/precision_conv.json", "w") as f:
             f.write(json.dumps(kpi_dict))
 
 kpi_dict={'class 0': kpi[1][0],'class 1': kpi[1][1],'class 2': kpi[1][2],'class 3': kpi[1][3],'class 4': kpi[1][4],'class 5': kpi[1][5],'class 6': kpi[1][6] ,'class 7': kpi[1][7],'class 8': kpi[1][8],'class 9': kpi[1][9]}
-with open("recall_conv.json", "w") as f:
+with open("metrics/recall_conv.json", "w") as f:
             f.write(json.dumps(kpi_dict))
 
 
 kpi_dict={'class 0': kpi[2][0],'class 1': kpi[2][1],'class 2': kpi[2][2],'class 3': kpi[2][3],'class 4': kpi[2][4],'class 5': kpi[2][5],'class 6': kpi[2][6] ,'class 7': kpi[2][7],'class 8': kpi[2][8],'class 9': kpi[2][9]}
-with open("f1_score_conv.json", "w") as f:
+with open("metrics/f1_score_conv.json", "w") as f:
             f.write(json.dumps(kpi_dict))
