@@ -2,7 +2,7 @@ import torch
 
 
 class attentionLayer(torch.nn.Module):
-    def __init__(self,in_channels ,out_channels, kernel_size = 3, stride=1, padding=0):
+    def __init__(self,in_channels ,out_channels, kernel_size = 3, stride=1, padding=1):
         super(attentionLayer,self).__init__()
         self.padding=padding
         self.stride = stride
