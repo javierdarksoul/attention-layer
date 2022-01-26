@@ -1,38 +1,38 @@
 schema: '2.0'
 stages:
   attention_model:
-    cmd: python attention_main.py
+    cmd: python attention_main.py 2
     outs:
     - path: metrics/f1_score_attention.json
-      md5: 74509f99b0f955e6c4b438ae49c2a295
-      size: 174
+      md5: 2282b455a7c57e0070c6348d3c359897
+      size: 310
     - path: metrics/metrics_attention.json
-      md5: 12fd871ded6b2f65123a4e142fb1fb21
-      size: 80
+      md5: 27624e6e8e398ea1826b5faf4e891e2e
+      size: 79
     - path: metrics/precision_attention.json
-      md5: 75799d41240049933fcd0fa58fd06d96
-      size: 163
+      md5: ebaf6c3e877d738ff2addc2beaa86c4f
+      size: 301
     - path: metrics/recall_attention.json
-      md5: 901c06b27d7cc1ed52bbfcd71d999b81
-      size: 160
+      md5: f95e0a237ec36bb85261e1dac76313dd
+      size: 308
     - path: trained_models/attention_model/best.pt
-      md5: daae12ac70c12892b9595761513fc0a8
+      md5: cc226ba381a6228ed4ebf397ab8f72c3
       size: 90717
   conv_model:
-    cmd: python conv_main.py
+    cmd: python conv_main.py 2
     outs:
     - path: metrics/f1_score_conv.json
-      md5: 84655c68e9b8dc230f7cb4fd14c764c3
-      size: 270
+      md5: 3f2bb72bb73b54f58f5b6efcf907e460
+      size: 308
     - path: metrics/metrics_conv.json
-      md5: b3303180b8365ce7b7e26dc7507f733e
-      size: 79
+      md5: caedfc272e359a3c96295fb002a7a88b
+      size: 80
     - path: metrics/precision_conv.json
-      md5: 441e265762e470caa9ca214b0ecde8f7
-      size: 240
+      md5: 46ea43c56edc26f2fe8e105ccfd1b0e0
+      size: 308
     - path: metrics/recall_conv.json
-      md5: 906c4c46aa577674f4916ebf1c6a0a50
-      size: 267
+      md5: 2df7304c4e75fd2a49d88b8adfc66cf4
+      size: 310
     - path: trained_models/conv_model/best.pt
-      md5: 81b643e931bc2892487b40375c995ea7
+      md5: ad6a2cbca31d043293d17696240a4d5d
       size: 72193

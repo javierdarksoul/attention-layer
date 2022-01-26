@@ -1,6 +1,6 @@
 stages:
   attention_model:
-    cmd: python attention_main.py
+    cmd: python attention_main.py 2
     metrics:
     - metrics/precision_attention.json:
         cache: false
@@ -13,7 +13,7 @@ stages:
     outs:
     - trained_models/attention_model/best.pt
   conv_model:
-    cmd: python conv_main.py
+    cmd: python conv_main.py 2
     metrics:
     - metrics/precision_conv.json:
         cache: false
