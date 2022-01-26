@@ -1,12 +1,12 @@
 train:
-  epoch: 1
-  usecuda: True
+  epoch: 200
+  usecuda: true
   learnrate: 1e-3
-  pathsave: "trained_models/attention_model"
-  pathsave_conv: "trained_models/conv_model"
+  pathsave: trained_models/attention_model
+  pathsave_conv: trained_models/conv_model
 
 attention_model:
-  attentionLayer1: 
+  attentionLayer1:
     in_channels: 1
     out_channels: 16
   attentionLayer2:
@@ -15,7 +15,7 @@ attention_model:
   attentionLayer3:
     in_channels: 32
     out_channels: 8
-conv_model: 
+conv_model:
   convLayer1:
     in_channels: 1
     out_channels: 16
@@ -25,4 +25,3 @@ conv_model:
   convLayer3:
     in_channels: 32
     out_channels: 8
-  
