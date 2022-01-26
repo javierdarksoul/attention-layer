@@ -1,0 +1,27 @@
+stages:
+  attention_model:
+    cmd: python attention_main.py
+    metrics:
+    - precision_attention.json:
+        cache: false
+    - recall_attention.json:
+        cache: false
+    - f1_score_attention.json:
+        cache: false
+    - metrics_attention.json:
+        cache: false
+    outs:
+    - trained_models/attention_model/best.pt
+  conv_model:
+    cmd: python conv_main.py
+    metrics:
+    - precision_conv.json:
+        cache: false
+    - recall_conv.json:
+        cache: false
+    - f1_score_conv.json:
+        cache: false
+    - metrics_conv.json:
+        cache: false
+    outs:
+    - trained_models/conv_model/best.pt
